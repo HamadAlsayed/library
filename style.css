@@ -2,7 +2,11 @@
     margin: 20px;
 }
 
-#form-container {
+#add-book-btn {
+    padding: 8px;
+}
+
+#new-book-form {
     display: none;
     margin-top: 16px; margin-bottom: 16px;
 }
