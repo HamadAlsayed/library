@@ -20,6 +20,6 @@ window.onload = function()
     }
 
     addBookBtn.addEventListener("click", function() {
-        formCnt.style.display = "contents";
+        formCnt.style.display = "block";
     })
 }

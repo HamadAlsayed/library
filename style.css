@@ -1,4 +1,23 @@
+#main-container {
+    margin: 20px;
+}
 
 #form-container {
     display: none;
+    margin-top: 16px; margin-bottom: 16px;
+}
+
+
+table, th, td {
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table {
+    margin-top: 16px;
+}
+
+th {
+    padding-right: 50px; padding-left: 56px;
 }
