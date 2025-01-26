@@ -25,6 +25,9 @@ function createBook(title, author, pages, read)
         author: author,
         pages: pages,
         read: read,
+        toggleRead() {
+            !read;
+        },
     }
 }
 
@@ -40,23 +43,30 @@ function addBookToLibrary()
 
 function render()
 {
+
+    while (bookTable.rows.length > 1) {
+        bookTable.deleteRow(1);
+    }
+
+    // Loop through myLibrary array to dispaly new <td> elements
     for (i = 0; i < myLibrary.length; i++)
     {
         let newRow = document.createElement('tr'),
-        tdTitle = addTextNode(myLibrary[i].title),
-        tdAuthor = addTextNode(myLibrary[i].author),
-        tdPages = addTextNode(myLibrary[i].pages),
-        tdRead = addTextNode(myLibrary[i].read);
+        tdTitle = addTextNode('td', myLibrary[i].title),
+        tdAuthor = addTextNode('td', myLibrary[i].author),
+        tdPages = addTextNode('td', myLibrary[i].pages),
+        tdRead = addTextNode('td', myLibrary[i].read);
 
-        bookTable.appendChild(newRow);
         newRow.append(tdTitle, tdAuthor, tdPages, tdRead);
+        bookTable.appendChild(newRow);
+        newRow.setAttribute('data-id', i);
     }
 }
 
 
-function addTextNode(text) {
+function addTextNode(type, text) {
     let newText = document.createTextNode(text),
-    newData = document.createElement('td');
+    newData = document.createElement(type);
     newData.appendChild(newText);
 
     return newData;
