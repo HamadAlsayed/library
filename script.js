@@ -107,5 +107,9 @@ bookTable.addEventListener('click', e => {
         }
     }
 
+    if (e.target.matches('.delete-btn')) {
+        e.target.parentNode.parentNode.remove();
+        myLibrary.splice(getNodeID, 1);
+    }
 
 })
